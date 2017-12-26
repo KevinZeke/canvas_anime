@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<style type="text/css">
+		body{
+			padding-top: 20px;
+		}
+		div{
+			width: 800px;
+			height: 800px;
+			margin: 0 auto;
+			border: 1px solid black;
+		}		
+	</style>
+</head>
+<body>
+	<div>
+		<canvas id="canvas1" width="800" height="800"></canvas>
+	</div>
+	<script type="text/javascript">
+		(function () {
+			let ctx = document.getElementById('canvas1').getContext("2d");
+			ctx.beginPath();
+			ctx.strokeStyle = "blue";
+		    var circle = {
+		        x : 150,    //圆心的x轴坐标值
+		        y : 150,    //圆心的y轴坐标值
+		        r : 150     //圆的半径
+		    };
+		    //沿着坐标点(100,100)为圆心、半径为50px的圆的逆时针方向绘制弧线
+		    ctx.arc(circle.x, circle.y, circle.r, 0, -Math.PI / 2, true);    
+		    //按照指定的路径绘制弧线
+		    ctx.stroke();
+		})();
+	</script>
+</body>
+</html>
